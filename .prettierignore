@@ -1,0 +1,12 @@
+# Ignore these paths from prettier formatting
+/node_modules
+/.next
+/out
+/dist
+/build
+coverage
+*.pem
+.env
+.env.*.local
+.DS_Store
+CHANGELOG.md

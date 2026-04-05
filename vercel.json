@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "NEXTAUTH_SECRET": "@nextauth_secret",
+    "NEXTAUTH_URL": "@nextauth_url",
+    "REDIS_URL": "@redis_url",
+    "UPSTASH_REDIS_REST_URL": "@upstash_redis_rest_url",
+    "UPSTASH_REDIS_REST_TOKEN": "@upstash_redis_rest_token",
+    "VAPID_PUBLIC_KEY": "@vapid_public_key",
+    "VAPID_PRIVATE_KEY": "@vapid_private_key",
+    "NEXT_PUBLIC_VAPID_PUBLIC_KEY": "@next_public_vapid_public_key",
+    "NEXT_PUBLIC_APP_URL": "@next_public_app_url"
+  },
+  "functions": {
+    "api/cron/**": {
+      "maxDuration": 900
+    },
+    "api/engines/**": {
+      "maxDuration": 60
+    },
+    "api/**": {
+      "maxDuration": 10
+    }
+  },
+  "regions": ["iad1"],
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "claude/**": false
+    }
+  },
+  "redirects": [
+    {
+      "source": "/docs/:path*",
+      "destination": "https://github.com/volta-crossfit/docs"
+    }
+  ]
+}

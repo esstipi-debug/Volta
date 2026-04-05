@@ -1,0 +1,43 @@
+{
+  "name": "volta-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start -p 3000",
+    "lint": "next lint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
+    "worker": "node src/workers/index.js"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.28.0",
+    "bcryptjs": "^2.4.3",
+    "bullmq": "^5.0.0",
+    "dotenv": "^17.4.0",
+    "ioredis": "^5.3.0",
+    "lucide-react": "^0.263.1",
+    "next": "^14.2.0",
+    "next-auth": "^5.0.0-beta.25",
+    "postgres": "^3.4.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/web-push": "^3.6.3",
+    "autoprefixer": "^10.4.0",
+    "drizzle-kit": "^0.21.0",
+    "drizzle-orm": "^0.45.2",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5.0.0"
+  }
+}
