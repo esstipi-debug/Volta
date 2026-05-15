@@ -2,10 +2,11 @@
 
 import React, { useState } from 'react'
 import { Sun, Moon } from 'lucide-react'
+import BoxLayout from './BoxLayout'
 
 const VoltaApp: React.FC = () => {
   const [darkMode, setDarkMode] = useState(true)
-  const [view, setView] = useState<'login' | 'athlete-dashboard' | 'coach-dashboard'>('login')
+  const [view, setView] = useState<'login' | 'athlete-dashboard' | 'coach-dashboard' | 'box-layout'>('login')
   const [user, setUser] = useState<{ name: string; role: string } | null>(null)
 
   const styles = {
@@ -168,12 +169,19 @@ const VoltaApp: React.FC = () => {
           </div>
         )}
 
+        {view === 'box-layout' && user && (
+          <BoxLayout darkMode={darkMode} onBack={() => setView('coach-dashboard')} />
+        )}
+
         {view === 'coach-dashboard' && user && (
           <div>
             <h1>Coach Dashboard 👨‍🏫</h1>
             <p style={{ color: darkMode ? '#9ca3af' : '#6b7280', marginBottom: '2rem' }}>
               Managing athletes
             </p>
+            <button style={styles.button} onClick={() => setView('box-layout')}>
+              🗺️ Vista cenital del box (m² y capacidad)
+            </button>
             <div style={styles.grid}>
               {['Carlos', 'Maria', 'Juan'].map((name) => (
                 <div key={name} style={styles.alertCard}>
